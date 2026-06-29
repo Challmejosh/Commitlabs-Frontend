@@ -8,10 +8,10 @@
     "pnpm": ">=9.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node api.js && next dev",
+    "build": "node api.js && next build",
     "analyze": "ANALYZE=true next build",
-    "start": "next start",
+    "start": "node api.js && next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "deadcode": "knip",
@@ -23,7 +23,6 @@
     "test:e2e": "playwright test",
     "test:contracts:deploy": "node contracts/scripts/deploy-testnet.smoke.mjs",
     "seed:mock": "tsx scripts/seed-backend-mock.ts",
-    "test:e2e": "playwright test",
     "prepare": "husky"
   },
   "lint-staged": {
